@@ -1,6 +1,7 @@
 import unittest
 from app.inventory import Inventory
 from app.car import Car
+from app.vehicle import Vehicle
 
 class TestSomething(unittest.TestCase):
     def test_assertion(self):
@@ -25,6 +26,19 @@ class TestInventory(unittest.TestCase):
         found = inv.find(car.name)
         self.assertIs(found, car_added)
         self.assertIn(car_added, inv.all())
+
+    def test_add_one_vehicle(self):
+
+        # Given
+        inv = Inventory()
+        vehicle = Vehicle(
+            name='vehicle',
+            year=2000,
+            colour='grey'
+        )
+
+        # When
+        vehicle_added = inv.add(vehicle=vehicle)
 
 if __name__ == "__main__":
     unittest.main()
