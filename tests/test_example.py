@@ -1,5 +1,5 @@
 import unittest
-from app.cars import CarClass, Car
+from app.inventory import CarClass, Car
 
 class TestSomething(unittest.TestCase):
     def test_assertion(self):

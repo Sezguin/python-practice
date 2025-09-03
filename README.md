@@ -1,10 +1,14 @@
 # Python Party
 
-## Getting Started
+## Power Shell Stuff
 
 Enter virtual environment:
 
 `.\.venv\Scripts\Activate.ps1`
+
+Exporting environment variables:
+
+`$env:PORT = "8000"`
 
 ## Notes
 

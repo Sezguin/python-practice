@@ -1,17 +1,22 @@
-from app.cars import CarClass
+from app.inventory import Inventory
+from app.settings import Settings
 
 if __name__ == "__main__":
   print('Launching script...')
-  car_class = CarClass()
+  inv = Inventory()
 
-  car_class.add_car("Seat Ibiza", 1999, 4999, "red")
-  car_class.add_car("Ford Fiesta", 2004, 8999, "blue")
+  inv.add_car("Seat Ibiza", 1999, 4999, "red")
+  inv.add_car("Ford Fiesta", 2004, 8999, "blue")
 
-  result = car_class.get_all_cars()
+  result = inv.all()
 
-  car_class.update_car_price("Seat Ibiza")
+  print(f'Discount value: {Settings.DISCOUNT}')
+
+  inv.apply_discount_by_name("Seat Ibiza", int(Settings.DISCOUNT))
 
   for car in result:
     print(f'Car name: {car.name} Year: {car.year} Price: {car.price_pence} Colour: {car.colour}')
+
+    print(f'Car age: {car.age()} years old!')
 
   print('Exiting script...')
