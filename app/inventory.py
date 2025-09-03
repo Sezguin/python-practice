@@ -13,7 +13,7 @@ class Inventory:
 
     def add(self, vehicle: Vehicle) -> Vehicle:
         self._items.append(vehicle)
-        return Vehicle
+        return vehicle
 
     def all(self) -> list[Vehicle]:
         return self._items

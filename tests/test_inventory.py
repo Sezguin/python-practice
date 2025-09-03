@@ -40,5 +40,11 @@ class TestInventory(unittest.TestCase):
         # When
         vehicle_added = inv.add(vehicle=vehicle)
 
+        # Then
+        found = inv.find(vehicle.name)
+
+        self.assertIs(found, vehicle_added)
+        self.assertIn(vehicle_added, inv.all())
+
 if __name__ == "__main__":
     unittest.main()

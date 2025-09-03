@@ -8,9 +8,5 @@ class Vehicle(ABC):
   year: int
   colour: str
 
-  @abstractmethod
-  def apply_percentage_discount(self):
-    pass
-
   def age(self) -> int:
     return date.today().year - self.year
