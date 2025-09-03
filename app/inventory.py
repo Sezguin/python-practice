@@ -1,5 +1,5 @@
 from typing import Optional
-from .vehicle import Vehicle
+from app.vehicle import Vehicle
 from app.car import Car
 
 class Inventory:
@@ -11,8 +11,9 @@ class Inventory:
         self._items.append(car)
         return car
 
-    def add(self, vehicle: Vehicle) -> None:
+    def add(self, vehicle: Vehicle) -> Vehicle:
         self._items.append(vehicle)
+        return Vehicle
 
     def all(self) -> list[Vehicle]:
         return self._items
